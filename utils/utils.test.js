@@ -12,6 +12,13 @@ it('should add two numbers', () => {
     // }
 });
 
+it('should async add two numbers', (done) => {
+    utils.asyncAdd(4, 3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
+})
+
 it('should square a number', () => {
     var res = utils.square(3);
 
@@ -22,13 +29,20 @@ it('should square a number', () => {
     // } 
 });
 
+it('should async square a number', (done) => {
+    utils.asyncSquare(5, (res) => {
+        expect(res).toBe(25).toBeA('number');
+        done();
+    });
+})
+
 // it('should expect some values', () => {
 //     // expect(12).toNotBe(12);
 //     // expect({name: 'dennis'}).toNotEqual({name: 'Dennis'});
 //     // expect([2,3,4]).toExclude(2);
 //     expect({
 //         name: 'Dennis',
-//         age: 17,
+//         age: 17, 
 //         location: 'Elst'
 //     }).toExclude({
 //         age: 17
