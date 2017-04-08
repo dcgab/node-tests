@@ -9,6 +9,19 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/users', (req, res) => {
+    res.send([{
+        name: 'Mike',
+        age: 27
+    }, {
+        name: 'Dennis',
+        age: 17
+    }, {
+        name: 'Jen',
+        age: 26
+    }]);
+})
+
 app.listen(3000, () => {
     console.log('Started listening on port 3000');
 });
